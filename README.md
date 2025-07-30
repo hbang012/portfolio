@@ -115,60 +115,90 @@
 
 ---
 
-## ✨ 매거진 서비스 클론 사이트 | 
+## ✨ 싱글즈 매거진 서비스 클론 사이트 | React + nextjs15
 
 ### 📍 소개
-계좌 생성/해지 및 잔액을 기반으로 거래를 처리하는 REST API
+특정 타깃을 겨냥한 잡지 구독 웹앱으로, <br> 반응형 구조를 통해 다양한 콘텐츠를 효율적으로 제공하는 프로젝트입니다. <br> 
+
+2주 동안 프론트엔드 단독 작업으로 mock 데이터를 활용한 <br> HTTP 연결 및 탭 기반 인터랙션 중심의 UI/UX 흐름을 구현했습니다. <br> 
+빠른 구현이 핵심이었으며, 제한된 시간 내에 기능 구성과 <br> 사용자 경험을 파악해 가며 구축했습니다.
 
 ### 🗓️ 기간
 2025.05.07 ~ 2025.05.26 (2주)
 
 ### 👥 인원
-1명
+1명 (프론트엔드)
 
-### 🛠️ 주요 업무
-- Redis 기반 동시성 제어
-- AOP를 활용한 재사용 가능한 분산락 구현
+### 🛠️ 주요 기능 구현
+- 메인 페이지를 중심으로 5개 이상의 서브 페이지 구성
+- mock 데이터를 활용한 가짜 서버 연동 및 데이터 흐름(ID 기반) 구축
+- 데이터별 필터 로직 처리 서버 구현이 핵심
+- 반응형 웹앱으로 UI/UX 최적화 대응
 
-### ⚙️ 기술 스택
-- Spring Boot, Spring Data JPA
-- H2, Embedded Redis
+### 🐛 이슈 리포트
+> **핵심 해결 : 요청 파라미터 변환으로 mock 데이터 정합성 개선**
+- 기존 매거진에서 특수문자가 포함된 subcategory 값들 때문에  <br> mock 데이터 연결 시 혼란이 많았고, 효율이 떨어졌습니다. <br>
 
----
-
-## ✨ 공공 와이파이 검색 웹 서비스
-
-### 📍 소개
-사용자 위치를 중심으로 가까운 공공 와이파이 정보를 제공하는 웹 서비스
-
-### 🗓️ 기간
-2023.11.28 ~ 2023.12.17 (3주)
-
-### 👥 인원
-1명 
-
-### 🛠️ 주요 업무
-- 공공데이터 OpenAPI 활용
-- 위치 기반 와이파이 검색 기능 구현
+  이에 프론트 요청값을 실제 데이터 키로 변환하는 처리 로직을 삽입해  <br> 정합성과 가독성을 동시에 확보했습니다. <br>
+  
+  결과적으로 데이터 구조가 단순화되고 테스트 환경에서도  <br> 유지보수가 쉬워져 협업 난이도가 크게 완화되었습니다. <br>
 
 ### ⚙️ 기술 스택
-- **Framework**: React, React Router, Vite, TypeScript, Tailwind CSS, Styled-components
-- **Database**: RESTful 구조 기반 외부 데이터 연동
+- **Framework**: Next.js 15, React 19, Vite, TypeScript
+- **State & Data**: TanStack React Query, RESTful 구조 기반 외부 데이터 연동
+- **UI**: Tailwind CSS, Styled-components, Swiper
 - **CI/CD**:  Vercel, GitHub Actions
-- **Infra**: Node.js, Vite, Ubuntu(Local), MSW
-- **Testing & Mocking**: MSW, TanStack React Query Devtools
-- **Monitoring & Debug**: ESLint, VSCode, React Query Devtools
-
+- **Infra & Dev Server**: Node.js, Express, CORS
+- **Testing & Mocking**: MSW, React Query Devtools, ESLint
+- **IDE & Tools**: VSCode
 
 ### 🔗 링크
-- [✅ Distribution Site](https://folin-cyp.vercel.app/)
 - [🐙 GitHub Repository](https://github.com/hbang012/The-Singles)
 ---
 
+## ✨ 아모레퍼시픽 클론 사이트 | html + css
 
+### 📍 소개
+화장품을 주로 생산하는 국내 대표 뷰티 기업 ‘아모레퍼시픽’을 클론한 사이트입니다. <br> 메인 소개 페이지를 중심으로 서브 페이지 2장을 함께 구축했으며, <br> 
+기본적인 HTML과 CSS를 활용해 구조와 스타일링에 대한 감각을 키우는 것이 목표입니다.
+
+### 🗓️ 기간
+2025.03.30 ~ 2025.04.28 (3주)
+
+### 👥 인원
+1명 (프론트엔드)
+
+### 🛠️ 주요 기능 구현
+- 메인 페이지 슬라이드 이미지를 CSS로 구현
+- 4뎁스로 구성된 웹앱 탭바 구현
+- 전반적인 레이아웃 구조 설계 고려
+- 서브 문의 페이지에 토글 형식 인터랙션 적용
+
+### 🐛 이슈 리포트
+> **복잡한 4뎁스 메뉴 구조 : 분석 후 반응형 인터랙션을 설계하여 안정적인 멀티 메뉴 UI를 구현함.**
+- 아모레퍼시픽 클론 프로젝트에서 4뎁스 네비게이션 구조를 구현하는 데 <br>
+  구조 파악과 인터랙션 설계에 많은 시간이 필요했습니다. <br>
+  
+  depth2와 depth3 간의 관계를 중심으로 hover, flex, absolute 등 <br>
+  다양한 방식으로 전환 흐름을 구축하였으며, 모바일 대응까지 고려해 반응형으로 완성했습니다. <br>
+
+  브랜드별 메뉴 복잡성을 고려한 구조 설계와 UI 정리가 핵심 과제였습니다. <br>
+  최종적으로 사용자 경험과 콘텐츠 연결성을 모두 확보한 안정적인 구조를 완성했습니다.
+
+### ⚙️ 기술 스택
+- **Language & Build**: HTML5, CSS3, JavaScript, jQuery
+- **Package Management**: npm, package.json 기반 모듈 구성 (@types/jquery 등)
+- **Library**: Swiper.js를 활용한 슬라이더 인터랙션
+- **UI/UX**: 반응형 웹 구현 및 CSS 커스터마이징
+- **Development Tools**: VSCode, ESLint
+
+
+### 🔗 링크
+- [🐙 GitHub Repository](https://github.com/hbang012/rwd-amorepacific)
 ---
 
 ## 📮 연락처
 
-> ✉ 
+자세한 연락은 이메일로 기다리겠습니다 
+> ✉ bhyejin967@gmail.com
 

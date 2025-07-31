@@ -62,7 +62,7 @@
 - **UI/UX & Web Features**: Swiper
 
 ### 🔗 링크
-- [✅ Distribution Site](https://www.hbjaws.com/)
+- [✅ Projects ](https://www.hbjaws.com/)
 - [‍💻 Frontend Repository](https://github.com/hbang012/oz-frontend)
 - [💾 Backend Repository](https://github.com/hbang012/oz-backend)
 - [💡 Chatbot Repository](https://github.com/hbang012/oz-chatbot)
@@ -109,7 +109,7 @@
 
 
 ### 🔗 링크
-- [✅ Distribution Site](https://folin-cyp.vercel.app/)
+- [✅ Projects ](https://folin-cyp.vercel.app/)
 - [🐙 GitHub Repository](https://github.com/hbang012/folin-cyp)
 
 ---
